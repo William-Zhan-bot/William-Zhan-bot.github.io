@@ -111,7 +111,10 @@ start.addEventListener("click", (e) => {
         donate.addEventListener("click", (e) => {
           window.alert("敬請期待!");
         });
-        speaker();
+
+        setTimeout((e) => {
+          speaker();
+        }, 2000);
       }, 3500); // 海螺動畫執行時間
     }, 1000); // 線往外拉
   }, back_time); // 線往內縮
