@@ -1,0 +1,299 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+div.container {
+  // 背景設定
+  background-image: url("../src/ocbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  //
+  header {
+    font-size: 40px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.6rem 1rem;
+    opacity: 0.5;
+    display: flex;
+    justify-content: space-around;
+    width: 75vw;
+  }
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  // 版面
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // 字體
+  font-family: "Noto Sans TC", sans-serif;
+
+  // click箱子
+  a.clickbox {
+    border: black solid 2px;
+    opacity: 0%;
+    width: 90px;
+    height: 90px;
+    cursor: grab;
+    position: absolute;
+    transform: translate(290px, 5px);
+  }
+
+  // 圖片框框
+  div.image {
+    // display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  // conch
+  img.conch {
+    width: 600px;
+    height: 400px;
+    // 關閉點擊
+    pointer-events: none;
+  }
+  // startline
+  img.startline {
+    width: 665px;
+    height: 375px;
+
+    position: absolute;
+    z-index: -1;
+    transform: translate(200px, 70px);
+  }
+}
+
+// footer
+footer {
+  font-family: "Noto Sans TC", sans-serif;
+  width: 100%;
+  height: 10vh;
+  font-size: 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(65, 44, 104, 0.937);
+  color: white;
+}
+// flash footer
+.flashfooter {
+  font-family: "Noto Sans TC", sans-serif;
+  width: 100%;
+  height: 10vh;
+  font-size: 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+// line animation
+.movetoback {
+  transform: translate(158px, 60px);
+  transition: all 1s ease-in;
+  width: 665px;
+  height: 375px;
+
+  position: absolute;
+  z-index: -1;
+}
+.linego {
+  transform: translate(362px, -20px);
+  transition: all 0.3s ease-out;
+  width: 665px;
+  height: 375px;
+
+  position: absolute;
+  z-index: -1;
+}
+
+//click box out
+.cb88 {
+  width: 0px;
+  height: 0px;
+}
+
+// 結果頁面
+//flash page
+div.flash {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(12, 11, 11);
+  color: white;
+
+  // 文字標籤
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  // 底下連結
+  .bbox {
+    height: 20vh;
+
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    // 按鈕
+    .btn {
+      color: rgb(255, 255, 255);
+      font-size: 14px;
+      text-decoration: none;
+      margin: 1rem 2rem;
+      padding: 0.5rem 1rem;
+      border: 1px white solid;
+
+      .btn:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// flash
+.light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 100%;
+  z-index: 2;
+  animation: 4s flash infinite;
+}
+
+// 動畫庫
+
+// 海螺呼吸
+@keyframes breathe {
+  0% {
+    transform: scale(0.85);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(0.85);
+  }
+}
+
+// 閃光
+@keyframes flash {
+  0% {
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    width: 2000px;
+    height: 2000px;
+  }
+}
+
+// 泡泡
+div[class^="bubble-"] {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  background-color: rgba(0, 141, 210, 0.3);
+  border-radius: 50%;
+  transform: translateX(-50%);
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: 85%;
+    width: 85%;
+    border-top: 1px solid rgba(255, 255, 255, 0.63);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  }
+}
+
+.bubble-1 {
+  bottom: random(10) + 1px;
+  left: random(99) + 1%;
+  animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
+}
+.bubble-2 {
+  bottom: random(10) + 1px;
+  left: random(99) + 1%;
+  animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
+}
+.bubble-3 {
+  bottom: random(10) + 1px;
+  left: random(99) + 1%;
+  animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
+}
+.bubble-4 {
+  bottom: random(10) + 1px;
+  left: random(99) + 1%;
+  animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
+}
+.bubble-5 {
+  bottom: random(10) + 1px;
+  left: random(99) + 1%;
+  animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
+}
+.bubble-6 {
+  bottom: random(10) + 1px;
+  left: random(99) + 1%;
+  animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
+}
+.bubble-7 {
+  bottom: random(10) + 1px;
+  left: random(99) + 1%;
+  animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
+}
+.bubble-8 {
+  bottom: random(10) + 1px;
+  left: random(99) + 1%;
+  animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
+}
+.bubble-9 {
+  bottom: random(10) + 1px;
+  left: random(99) + 1%;
+  animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
+}
+.bubble-10 {
+  bottom: random(10) + 1px;
+  left: random(99) + 1%;
+  animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
+}
+@keyframes bubble-movement {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+    height: 1px;
+    width: 1px;
+  }
+  100% {
+    transform: translate3d(-50%, -500px, 0);
+    height: 75px;
+    width: 75px;
+  }
+}

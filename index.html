@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>super conch</title>
+    <!-- css語法 -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap"
+      rel="stylesheet"
+    />
+    <!--  web icon -->
+    <link rel="icon" href="/src/conch.ico" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>提問題 拉線 取得答案 謝謝海螺</header>
+      <a class="clickbox"></a>
+      <img
+        class="startline"
+        src="./src/startline.png"
+        alt="start line gone..."
+      />
+      <div class="img">
+        <img
+          class="conch"
+          src="./src/superconch-nobg.png"
+          alt="Super Conch is sleeping. Please wait!"
+        />
+      </div>
+      <!-- 泡泡區 -->
+      <div class="bubbles">
+        <div class="bubble-1"></div>
+        <div class="bubble-2"></div>
+        <div class="bubble-3"></div>
+        <div class="bubble-4"></div>
+        <div class="bubble-5"></div>
+        <div class="bubble-6"></div>
+        <div class="bubble-7"></div>
+        <div class="bubble-8"></div>
+        <div class="bubble-9"></div>
+        <div class="bubble-10"></div>
+      </div>
+    </div>
+    <footer>Made by WilliZhan©</footer>
+  </body>
+  <!-- 先include animejs 後面就可自由使用
+  可把這裡看作是node的import 因為純前端沒有node功能 -->
+  <script src="anime.min.js"></script>
+  <script src="app.js"></script>
+</html>

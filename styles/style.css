@@ -1,0 +1,312 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+div.container {
+  background-image: url("../src/ocbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Sans TC", sans-serif;
+}
+div.container header {
+  font-size: 40px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1rem;
+  opacity: 0.5;
+  display: flex;
+  justify-content: space-around;
+  width: 75vw;
+}
+div.container a.clickbox {
+  border: black solid 2px;
+  opacity: 0%;
+  width: 90px;
+  height: 90px;
+  cursor: -webkit-grab;
+  cursor: grab;
+  position: absolute;
+  transform: translate(290px, 5px);
+}
+div.container div.image {
+  width: 100%;
+  height: 100%;
+}
+div.container img.conch {
+  width: 600px;
+  height: 400px;
+  pointer-events: none;
+}
+div.container img.startline {
+  width: 665px;
+  height: 375px;
+  position: absolute;
+  z-index: -1;
+  transform: translate(200px, 70px);
+}
+
+footer {
+  font-family: "Noto Sans TC", sans-serif;
+  width: 100%;
+  height: 10vh;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(65, 44, 104, 0.937);
+  color: white;
+}
+
+.flashfooter {
+  font-family: "Noto Sans TC", sans-serif;
+  width: 100%;
+  height: 10vh;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.movetoback {
+  transform: translate(158px, 60px);
+  transition: all 1s ease-in;
+  width: 665px;
+  height: 375px;
+  position: absolute;
+  z-index: -1;
+}
+
+.linego {
+  transform: translate(362px, -20px);
+  transition: all 0.3s ease-out;
+  width: 665px;
+  height: 375px;
+  position: absolute;
+  z-index: -1;
+}
+
+.cb88 {
+  width: 0px;
+  height: 0px;
+}
+
+div.flash {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(12, 11, 11);
+  color: white;
+}
+div.flash h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  text-align: center;
+  padding: 1rem;
+}
+div.flash .bbox {
+  height: 20vh;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+div.flash .bbox .btn {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  text-decoration: none;
+  margin: 1rem 2rem;
+  padding: 0.5rem 1rem;
+  border: 1px white solid;
+}
+div.flash .bbox .btn .btn:hover {
+  cursor: pointer;
+}
+
+.light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(ellipse at center, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 100%;
+  z-index: 2;
+  -webkit-animation: 4s flash infinite;
+          animation: 4s flash infinite;
+}
+
+@-webkit-keyframes breathe {
+  0% {
+    transform: scale(0.85);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(0.85);
+  }
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(0.85);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(0.85);
+  }
+}
+@-webkit-keyframes flash {
+  0% {
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    width: 2000px;
+    height: 2000px;
+  }
+}
+@keyframes flash {
+  0% {
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    width: 2000px;
+    height: 2000px;
+  }
+}
+div[class^=bubble-] {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  background-color: rgba(0, 141, 210, 0.3);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+div[class^=bubble-]:after {
+  content: "";
+  position: absolute;
+  height: 85%;
+  width: 85%;
+  border-top: 1px solid rgba(255, 255, 255, 0.63);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+}
+
+.bubble-1 {
+  bottom: 10px;
+  left: 46%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -1.8s;
+          animation: bubble-movement 4s infinite ease-in -1.8s;
+}
+
+.bubble-2 {
+  bottom: 6px;
+  left: 45%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -0.23s;
+          animation: bubble-movement 4s infinite ease-in -0.23s;
+}
+
+.bubble-3 {
+  bottom: 8px;
+  left: 82%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -1.27s;
+          animation: bubble-movement 4s infinite ease-in -1.27s;
+}
+
+.bubble-4 {
+  bottom: 8px;
+  left: 40%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -2.63s;
+          animation: bubble-movement 4s infinite ease-in -2.63s;
+}
+
+.bubble-5 {
+  bottom: 8px;
+  left: 85%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -2.94s;
+          animation: bubble-movement 4s infinite ease-in -2.94s;
+}
+
+.bubble-6 {
+  bottom: 6px;
+  left: 61%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -0.74s;
+          animation: bubble-movement 4s infinite ease-in -0.74s;
+}
+
+.bubble-7 {
+  bottom: 9px;
+  left: 53%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -2.22s;
+          animation: bubble-movement 4s infinite ease-in -2.22s;
+}
+
+.bubble-8 {
+  bottom: 4px;
+  left: 91%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -2.94s;
+          animation: bubble-movement 4s infinite ease-in -2.94s;
+}
+
+.bubble-9 {
+  bottom: 3px;
+  left: 40%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -1.1s;
+          animation: bubble-movement 4s infinite ease-in -1.1s;
+}
+
+.bubble-10 {
+  bottom: 10px;
+  left: 25%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -1.48s;
+          animation: bubble-movement 4s infinite ease-in -1.48s;
+}
+
+@-webkit-keyframes bubble-movement {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+    height: 1px;
+    width: 1px;
+  }
+  100% {
+    transform: translate3d(-50%, -500px, 0);
+    height: 75px;
+    width: 75px;
+  }
+}
+
+@keyframes bubble-movement {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+    height: 1px;
+    width: 1px;
+  }
+  100% {
+    transform: translate3d(-50%, -500px, 0);
+    height: 75px;
+    width: 75px;
+  }
+}/*# sourceMappingURL=style.css.map */
