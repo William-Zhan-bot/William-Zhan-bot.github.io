@@ -96,35 +96,22 @@ start.addEventListener("click", (e) => {
         let footer = document.querySelector("footer");
         footer.className = "flashfooter";
 
-        // fetch資料
-        fetch("http://localhost:3000/result")
-          .then(async (res) => {
-            // 必須解析回傳的json格式promise
-            let json = await res.json();
-            // 避免資料庫空白資訊
-            let message = json.message;
-            // 避免資料庫空白資訊
-            if (message.length < 4) {
-              message = "坐下";
-            }
-            sug.innerHTML = "<h1>" + message + "</h1>";
+        // 原本的fetch資料
+        let words = rand_sug();
+        sug.innerHTML = words;
 
-            // 確定上方資訊之後再進行新增按鈕 不然會被洗掉
-            // 裝進按鈕箱子
-            document.querySelector("div.bbox").appendChild(again);
-            document.querySelector("div.bbox").appendChild(dedicate);
+        // 確定上方資訊之後再進行新增按鈕 不然會被洗掉
+        // 裝進按鈕箱子
+        document.querySelector("div.bbox").appendChild(again);
+        document.querySelector("div.bbox").appendChild(dedicate);
 
-            // donate
-            let donate = document.querySelector("a.dedicate");
-            console.log(donate);
-            donate.addEventListener("click", (e) => {
-              window.alert("謝謝虔誠，敬請期待!");
-            });
-          })
-          .catch((err) => {
-            console.log(err);
-            flash.innerHTML = "fail!";
-          });
+        // donate
+        let donate = document.querySelector("a.dedicate");
+        console.log(donate);
+        donate.addEventListener("click", (e) => {
+          window.alert("敬請期待!");
+        });
+        speaker();
       }, 3500); // 海螺動畫執行時間
     }, 1000); // 線往外拉
   }, back_time); // 線往內縮
