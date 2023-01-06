@@ -19,14 +19,20 @@ div.container {
   font-family: "Noto Sans TC", sans-serif;
 }
 div.container header {
-  font-size: 40px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 0.6rem 1rem;
-  opacity: 0.5;
+  opacity: 0.85;
   display: flex;
   justify-content: space-around;
   width: 75vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+div.container header h4 {
+  font-size: 40px;
+  color: rgb(247, 240, 195);
+  background-color: rgba(143, 196, 243, 0.161);
 }
 div.container a.clickbox {
   border: black solid 2px;
@@ -37,10 +43,6 @@ div.container a.clickbox {
   cursor: grab;
   position: absolute;
   transform: translate(290px, 5px);
-}
-div.container div.image {
-  width: 100%;
-  height: 100%;
 }
 div.container img.conch {
   width: 600px;
@@ -136,6 +138,7 @@ div.flash .bbox .btn {
   margin: 1rem 2rem;
   padding: 0.5rem 1rem;
   border: 1px white solid;
+  text-align: center;
 }
 div.flash .bbox .btn .btn:hover {
   cursor: pointer;
@@ -155,6 +158,105 @@ div.flash .bbox .btn .btn:hover {
           animation: 4s flash infinite;
 }
 
+@media only screen and (max-width: 720px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+  div.img {
+    width: 300px;
+    height: 200px;
+  }
+  div.img img.conch {
+    width: 300px;
+    height: 200px;
+    pointer-events: none;
+    -webkit-animation: 7s breathe infinite;
+            animation: 7s breathe infinite;
+  }
+  div.container header h4 {
+    font-size: 32px;
+  }
+  div.container img.startline {
+    width: 225px;
+    height: 130px;
+    position: absolute;
+    z-index: -1;
+    transform: translate(70px, 90px);
+  }
+  div.container img.movetoback {
+    transform: translate(60px, 70px);
+    transition: all 1s ease-in;
+    width: 225px;
+    height: 130px;
+    position: absolute;
+    z-index: -1;
+  }
+  div.container img.linego {
+    transform: translate(36px, -2px);
+    transition: all 0.3s ease-out;
+    width: 110px;
+    height: 65px;
+    position: absolute;
+    z-index: -1;
+  }
+  div.container a.clickbox {
+    border: black solid 2px;
+    opacity: 0%;
+    width: 80px;
+    height: 80px;
+    cursor: -webkit-grab;
+    cursor: grab;
+    position: absolute;
+    transform: translate(90px, 60px);
+  }
+  @-webkit-keyframes breathe {
+    0% {
+      transform: scale(0.75);
+    }
+    50% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(0.75);
+    }
+  }
+  @keyframes breathe {
+    0% {
+      transform: scale(0.75);
+    }
+    50% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(0.75);
+    }
+  }
+  @-webkit-keyframes bubble-movement {
+    0% {
+      transform: translate3d(-50%, 0, 0);
+      height: 1px;
+      width: 1px;
+    }
+    100% {
+      transform: translate3d(-50%, -150px, 0);
+      height: 10px;
+      width: 10px;
+    }
+  }
+  @keyframes bubble-movement {
+    0% {
+      transform: translate3d(-50%, 0, 0);
+      height: 1px;
+      width: 1px;
+    }
+    100% {
+      transform: translate3d(-50%, -150px, 0);
+      height: 10px;
+      width: 10px;
+    }
+  }
+}
 @-webkit-keyframes breathe {
   0% {
     transform: scale(0.85);
@@ -166,7 +268,6 @@ div.flash .bbox .btn .btn:hover {
     transform: scale(0.85);
   }
 }
-
 @keyframes breathe {
   0% {
     transform: scale(0.85);
@@ -219,73 +320,73 @@ div[class^=bubble-]:after {
 }
 
 .bubble-1 {
-  bottom: 6px;
-  left: 3%;
-  -webkit-animation: bubble-movement 4s infinite ease-in -2.41s;
-          animation: bubble-movement 4s infinite ease-in -2.41s;
+  bottom: 8px;
+  left: 45%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -2.32s;
+          animation: bubble-movement 4s infinite ease-in -2.32s;
 }
 
 .bubble-2 {
-  bottom: 2px;
-  left: 17%;
-  -webkit-animation: bubble-movement 4s infinite ease-in -1.38s;
-          animation: bubble-movement 4s infinite ease-in -1.38s;
+  bottom: 8px;
+  left: 90%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -2.9s;
+          animation: bubble-movement 4s infinite ease-in -2.9s;
 }
 
 .bubble-3 {
   bottom: 11px;
-  left: 12%;
-  -webkit-animation: bubble-movement 4s infinite ease-in -0.74s;
-          animation: bubble-movement 4s infinite ease-in -0.74s;
+  left: 78%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -1.29s;
+          animation: bubble-movement 4s infinite ease-in -1.29s;
 }
 
 .bubble-4 {
-  bottom: 9px;
-  left: 59%;
-  -webkit-animation: bubble-movement 4s infinite ease-in -1.21s;
-          animation: bubble-movement 4s infinite ease-in -1.21s;
+  bottom: 5px;
+  left: 45%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -2.22s;
+          animation: bubble-movement 4s infinite ease-in -2.22s;
 }
 
 .bubble-5 {
-  bottom: 10px;
-  left: 86%;
-  -webkit-animation: bubble-movement 4s infinite ease-in -1.7s;
-          animation: bubble-movement 4s infinite ease-in -1.7s;
+  bottom: 7px;
+  left: 5%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -0.23s;
+          animation: bubble-movement 4s infinite ease-in -0.23s;
 }
 
 .bubble-6 {
-  bottom: 10px;
-  left: 78%;
-  -webkit-animation: bubble-movement 4s infinite ease-in -1.74s;
-          animation: bubble-movement 4s infinite ease-in -1.74s;
+  bottom: 5px;
+  left: 15%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -0.5s;
+          animation: bubble-movement 4s infinite ease-in -0.5s;
 }
 
 .bubble-7 {
-  bottom: 5px;
-  left: 26%;
-  -webkit-animation: bubble-movement 4s infinite ease-in -2.71s;
-          animation: bubble-movement 4s infinite ease-in -2.71s;
+  bottom: 11px;
+  left: 98%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -1.76s;
+          animation: bubble-movement 4s infinite ease-in -1.76s;
 }
 
 .bubble-8 {
   bottom: 5px;
-  left: 71%;
-  -webkit-animation: bubble-movement 4s infinite ease-in -1.49s;
-          animation: bubble-movement 4s infinite ease-in -1.49s;
+  left: 40%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -2.48s;
+          animation: bubble-movement 4s infinite ease-in -2.48s;
 }
 
 .bubble-9 {
-  bottom: 8px;
-  left: 28%;
-  -webkit-animation: bubble-movement 4s infinite ease-in -0.48s;
-          animation: bubble-movement 4s infinite ease-in -0.48s;
+  bottom: 4px;
+  left: 80%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -1.05s;
+          animation: bubble-movement 4s infinite ease-in -1.05s;
 }
 
 .bubble-10 {
-  bottom: 7px;
-  left: 32%;
-  -webkit-animation: bubble-movement 4s infinite ease-in -2.2s;
-          animation: bubble-movement 4s infinite ease-in -2.2s;
+  bottom: 4px;
+  left: 42%;
+  -webkit-animation: bubble-movement 4s infinite ease-in -1.48s;
+          animation: bubble-movement 4s infinite ease-in -1.48s;
 }
 
 @-webkit-keyframes bubble-movement {

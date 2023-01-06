@@ -109,7 +109,7 @@ start.addEventListener("click", (e) => {
         let donate = document.querySelector("a.dedicate");
         console.log(donate);
         donate.addEventListener("click", (e) => {
-          window.alert("敬請期待!");
+          window.alert("佛系海螺不收費用!");
         });
 
         setTimeout((e) => {

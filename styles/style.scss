@@ -12,14 +12,22 @@ div.container {
   z-index: 1;
   //
   header {
-    font-size: 40px;
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 0.6rem 1rem;
-    opacity: 0.5;
+    opacity: 0.85;
     display: flex;
     justify-content: space-around;
     width: 75vw;
+    h4 {
+      font-size: 40px;
+      color: rgb(247, 240, 195);
+      background-color: rgba(143, 196, 243, 0.161);
+    }
+
+    // flexbox
+    display: flex;
+    flex-wrap: wrap;
   }
   width: 100%;
   height: 100vh;
@@ -41,13 +49,6 @@ div.container {
     cursor: grab;
     position: absolute;
     transform: translate(290px, 5px);
-  }
-
-  // 圖片框框
-  div.image {
-    // display: flex;
-    width: 100%;
-    height: 100%;
   }
 
   // conch
@@ -163,6 +164,7 @@ div.flash {
       margin: 1rem 2rem;
       padding: 0.5rem 1rem;
       border: 1px white solid;
+      text-align: center;
 
       .btn:hover {
         cursor: pointer;
@@ -189,8 +191,106 @@ div.flash {
   animation: 4s flash infinite;
 }
 
-// 動畫庫
+// rwd
+@media only screen and (max-width: 720px) {
+  $c_width: 300px;
+  $c_height: 200px;
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
 
+  div.img {
+    // display: flex;
+    width: $c_width;
+    height: $c_height;
+
+    img.conch {
+      width: $c_width;
+      height: $c_height;
+      // 關閉點擊
+      pointer-events: none;
+      // 呼吸燈
+      animation: 7s breathe infinite;
+    }
+  }
+  div.container {
+    // 字幕調整
+    header {
+      h4 {
+        font-size: 32px;
+      }
+    }
+    // startline
+    img.startline {
+      width: 225px;
+      height: 130px;
+
+      position: absolute;
+      z-index: -1;
+      transform: translate(70px, 90px);
+    }
+
+    // line animation
+    img.movetoback {
+      transform: translate(60px, 70px);
+      transition: all 1s ease-in;
+      width: 225px;
+      height: 130px;
+
+      position: absolute;
+      z-index: -1;
+    }
+    img.linego {
+      transform: translate(36px, -2px);
+      transition: all 0.3s ease-out;
+      width: 110px;
+      height: 65px;
+
+      position: absolute;
+      z-index: -1;
+    }
+
+    // click箱子
+    a.clickbox {
+      border: black solid 2px;
+      opacity: 0%;
+      width: 80px;
+      height: 80px;
+      cursor: grab;
+      position: absolute;
+      transform: translate(90px, 60px);
+    }
+  }
+
+  // 海螺呼吸
+  @keyframes breathe {
+    0% {
+      transform: scale(0.75);
+    }
+    50% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(0.75);
+    }
+  }
+  // 泡泡
+  @keyframes bubble-movement {
+    0% {
+      transform: translate3d(-50%, 0, 0);
+      height: 1px;
+      width: 1px;
+    }
+    100% {
+      transform: translate3d(-50%, -150px, 0);
+      height: 10px;
+      width: 10px;
+    }
+  }
+}
+
+// 動畫庫
 // 海螺呼吸
 @keyframes breathe {
   0% {
