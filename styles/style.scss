@@ -6,7 +6,7 @@
 
 div.container {
   // 背景設定
-  background-image: url("../src/ocbg.jpg");
+  background-image: url("../src/seabg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 1;
@@ -18,11 +18,12 @@ div.container {
     opacity: 0.85;
     display: flex;
     justify-content: space-around;
-    width: 75vw;
+    width: 50vw;
     h4 {
       font-size: 40px;
-      color: rgb(247, 240, 195);
-      background-color: rgba(143, 196, 243, 0.161);
+    }
+    h4.b1 {
+      color: antiquewhite;
     }
     h4.b {
       color: rgb(20, 61, 109);
